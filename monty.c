@@ -64,6 +64,14 @@ int main(int argc, char *argv[])
 	{
 	    swap(&stack, line_number);
 	}
+	else if (strcmp(token, "swap") == 0)
+	{
+	    nop(&stack, line_number);
+	}
+	else if (strcmp(token, "add") == 0)
+        {
+            add(&stack, line_number);
+        }
         else
         {
             fprintf(stderr, "L%d: unknown instruction %s\n", line_number, token);
