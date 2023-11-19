@@ -15,11 +15,11 @@ void add(stack_t **stack, unsigned int line_number)
         exit(EXIT_FAILURE);
     }
 
-    (*stack)->next->n += (*stack)->n;  // Add the top two elements
-    temp = *stack;  // Save the current top element
-    *stack = (*stack)->next;  // Move the stack pointer to the second element
-    (*stack)->prev = NULL;  // Update the prev pointer of the new top element
-    free(temp);  // Free the old top element
+    (*stack)->next->n += (*stack)->n;  
+    temp = *stack;  
+    *stack = (*stack)->next;  
+    (*stack)->prev = NULL;  
+   free(temp);  
 }
 /**
  * nop - Does nothing
