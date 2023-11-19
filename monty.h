@@ -3,7 +3,9 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
+#define MAX_LINE_LENGTH 256
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
