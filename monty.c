@@ -57,6 +57,7 @@ int main(int argc, char *argv[])
             pint(&stack, line_number);
         }
 	else if (strcmp(token, "pop") == 0)
+	{
 	    pop(&stack, line_number);
         }
         else
