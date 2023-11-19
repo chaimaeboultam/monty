@@ -60,11 +60,7 @@ int main(int argc, char *argv[])
 	{
 	    pop(&stack, line_number);
         }
-	else if (strcmp(token, "swap") == 0)
-	{
-	    swap(&stack, line_number);
-	}
-	else if (strcmp(token, "swap") == 0)
+	else if (strcmp(token, "nop") == 0)
 	{
 	    nop(&stack, line_number);
 	}
