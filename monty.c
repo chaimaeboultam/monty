@@ -10,10 +10,9 @@ int main(int argc, char *argv[])
 {
     FILE *file;
     char *line = NULL;
-    size_t len = 0;
     stack_t *stack = NULL;
     unsigned int line_number = 0;
-    ssize_t nread;
+    char *token;
 
     if (argc != 2)
     {
@@ -28,24 +27,23 @@ int main(int argc, char *argv[])
         exit(EXIT_FAILURE);
     }
 
-    while ((nread = getline(&line, &len, file)) != -1)
+    while (fgets(line, MAX_LINE_LENGTH, file) != NULL)
     {
         line_number++;
 
-        /* Tokenize the line */
-        char *token = strtok(line, " \t\n");
+        token = strtok(line, " \t\n");
 
         if (token != NULL && strcmp(token, "push") == 0)
         {
             token = strtok(NULL, " \t\n");
             if (token != NULL)
             {
-                int value = atoi(token);
+               unsigned int value = atoi(token);
                 if (value != 0)
                     push(&stack, value);
                 else
                 {
-                    fprintf(stderr, "L%d: usage: push integer\n", line_number);
+            	    fprintf(stderr, "L%d: usage: push integer\n", line_number);
                     exit(EXIT_FAILURE);
                 }
             }
